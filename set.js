@@ -3,17 +3,18 @@ class mySet{
     this.set = [];
   }
 
-  // check for the presence of an element and return true or false
+  //Checks for the presence of an element and returns true if the element exists in a set, false if not
   has(val) {
     return this.set.indexOf(val) !== -1;
   }
 
-  // return values of set
+  //Returns the values within a set
   values(){
     return this.set;
   }
 
-  //adds value to set if it does not already exist
+  //Adds a value to a set if it does not already exist
+  //Returns true if element was added, false if not
   add(val){
     if(!this.has(val)){
       this.set.push(val);
@@ -22,7 +23,8 @@ class mySet{
     return false;
   }
 
-  //removes an element from a set
+  //Removes an element from a set if it exists within it
+  //Returns true if element was removed, false if not
   remove(val){
     if(this.has(val)){
       let index = this.set.indexOf(val);
@@ -32,11 +34,13 @@ class mySet{
     return false;
   }
 
-  //returns the size of the set
+  //Returns the size of the set
   size(){
     return this.set.length();
   }
 
+  //Returns a new set that contains the union of two sets
+  // A U B
   union(otherSet){
     let union = new mySet();
     let a = this.values();
@@ -53,6 +57,8 @@ class mySet{
     return union;
   }
 
+  //Returns a new set that contains the intersection of two sets
+  // A U B
   intersection(otherSet){
     let intersection = new mySet();
     let a = this.values();
@@ -65,6 +71,8 @@ class mySet{
     return intersection;
   }
 
+  //Returns a new set that contains the difference of two sets
+  // A U B
   difference(otherSet){
     let difference = new mySet();
     let a = this.values();
@@ -77,6 +85,7 @@ class mySet{
     return difference;
   }
 
+  //Returns true or false if a set is a proper subset of another set
   subset(otherSet){
     let a = this.values();
     return a.every((val) => {

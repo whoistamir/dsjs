@@ -3,18 +3,22 @@ class Stack {
     this.items = [];
   }
   
+  //Returns the length of a stack
   length(){
     return this.items.length;
   }
   
+  //Returns true if stack is empty, false if not
   isEmpty(){
     return this.items.length === 0;
   }
   
+  //Adds item to the top of a stack
   push(val){
     this.items.push(val);
   }
   
+  //Removes item from the top of a stack
   pop(){
    if(this.isEmpty(this.items)){
      return "Underflow"
@@ -23,6 +27,7 @@ class Stack {
    }
   }
   
+  //Returns item at the top of a stack
   peek(){
     if(this.isEmpty()){
       return -1;
@@ -30,7 +35,8 @@ class Stack {
     return this.items[this.items.length - 1];
   }
   
-  printStack(){
+  //Prints stack where top -> bottom = left -> right
+  print(){
     let string = '';
     for(let i = 0; i < this.items.length; i++){
       string += `${this.items[i]} `;
@@ -44,7 +50,7 @@ let myStack = new Stack();
 for(let i = 0; i < 10; i++){
   myStack.push(i);
 }
-myStack.printStack();
+myStack.print();
 while(!myStack.isEmpty()){
   console.log(myStack.peek());
   myStack.pop();

@@ -3,26 +3,32 @@ class myQueue{
     this.queue = [];
   }
 
+  //Prints a queue
   print(){
     console.log(this.queue);
   }
 
+  //Adds element to the end of a queue
   enqueue(val){
     this.queue.push(val);
   }
 
+  //Removes an element from the beginning of a queue
   dequeue(val){
     this.queue.shift();
   }
 
+  //Returns the element at the front of a queue
   front(){
     return this.queue[0];
   }
 
+  //Returns the size of a queue
   size(){
     return this.queue.length;
   }
 
+  //Returns true if a queue is empty, false if not
   isEmpty(){
     return this.size === 0;
   }
