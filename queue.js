@@ -15,8 +15,8 @@ class myQueue{
 
   //Removes an element from the beginning of a queue
   dequeue(val){
-    let val = this.queue.shift();
-    return val;
+    let element = this.queue.shift();
+    return element[0];
   }
 
   //Returns the element at the front of a queue
@@ -41,6 +41,7 @@ q.enqueue('a');
 q.enqueue('b');
 q.enqueue('c');
 q.print();
-q.dequeue();
+let x = q.dequeue();
+console.log(x);
 console.log(q.front());
 q.print();
