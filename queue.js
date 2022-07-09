@@ -15,7 +15,8 @@ class myQueue{
 
   //Removes an element from the beginning of a queue
   dequeue(val){
-    this.queue.shift();
+    let val = this.queue.shift();
+    return val;
   }
 
   //Returns the element at the front of a queue
